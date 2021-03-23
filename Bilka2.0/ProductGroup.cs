@@ -34,6 +34,8 @@ namespace Bilka2._0
             throw new NotImplementedException();
         }
 
+        public int NumberOfComponents { get; set; }
+
         public int NumberOfProducts { get; set; }
         public string Description { get; set; }
     }
