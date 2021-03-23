@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bilka.Test.Unit", "Bilka.Test.Unit\Bilka.Test.Unit.csproj", "{BF60AAB1-CAD1-4F8D-8B2A-17C39CA367D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bilka2.0", "Bilka2.0\Bilka2.0.csproj", "{7084AD12-C963-49C1-9F26-07993947BD3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilkaLib", "Bilka2.0\BilkaLib.csproj", "{7084AD12-C963-49C1-9F26-07993947BD3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
