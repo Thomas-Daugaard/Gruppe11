@@ -4,8 +4,8 @@ namespace Bilka
 {
     public interface IProductComponent
     {
-        public void AddProduct(IProductComponent);
-        public void RemoveProduct(IProductComponent);
+        public void AddProduct(IProductComponent p);
+        public void RemoveProduct(IProductComponent p);
         public IProductComponent GetProduct();
         public void PrintProduct();
         public double GetTotalValue();
