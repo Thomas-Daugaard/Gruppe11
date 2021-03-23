@@ -9,7 +9,7 @@ namespace Bilka
         public IProductComponent GetProduct();
         public void PrintProduct();
         public double GetTotalValue();
-        public int NumberOfProducts { get; set; }
+        public int NumberOfComponents { get; set; }
         public string Description { get; set; }
     }
 }
