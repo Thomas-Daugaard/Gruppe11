@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeLibrary", "SomeLibrary\SomeLibrary.csproj", "{A9CE33B3-E167-4994-9ECC-DD8D99236DF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bilka v2.0", "SomeLibrary\Bilka v2.0.csproj", "{A9CE33B3-E167-4994-9ECC-DD8D99236DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeConsoleApp", "SomeConsoleApp\SomeConsoleApp.csproj", "{81E666F5-12F6-47C6-93EA-E935109A8F77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "SomeConsoleApp\Client.csproj", "{81E666F5-12F6-47C6-93EA-E935109A8F77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeTestProject", "SomeTestProject\SomeTestProject.csproj", "{C9AD0423-AD59-4538-B8B0-16DFD48E53BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bilka.Test.Unit", "SomeTestProject\Bilka.Test.Unit.csproj", "{C9AD0423-AD59-4538-B8B0-16DFD48E53BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
