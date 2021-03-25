@@ -51,6 +51,10 @@ namespace Bilka
                     case "S":
                         Console.WriteLine(fullInventory.GetTotalStock());
                         break;
+                    case "F":
+                        IProductComponent temp = fullInventory.FindComponent("HomeCooker2000");
+                        Console.WriteLine(temp.Name);
+                        break;
                 }
 
             } while (key != "E");

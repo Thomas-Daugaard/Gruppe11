@@ -44,6 +44,8 @@ namespace Bilka
                     return component.FindComponent(condition);
                 }
             }
+
+            return null;
         }
 
         public void AddCategory(IProductComponent categoryComponent)
