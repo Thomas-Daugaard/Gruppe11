@@ -13,12 +13,12 @@ namespace Bilka
             Type = IProductComponent.ComponentType.productCategory;
         }
 
-        public void AddComponent(IProductComponent component)
+        public void AddComponent(IProductComponent root, IProductComponent component)
         {
 
             IProductComponent temp = null;
-            bool found = FindComponent(component.Name, ref temp);
-            if (found != false)
+            bool found = root.FindComponent(component.Name, ref temp);
+            if (found)
             {
                 if (temp.Type == IProductComponent.ComponentType.product)
                 {
@@ -37,7 +37,13 @@ namespace Bilka
         {
             foreach (var component in _productComponents)
             {
-                if (component.FindComponent(name, ref comp))
+                if (Name == name)
+                {
+                    comp = this;
+                    return true;
+                }
+
+                if(component.FindComponent(name, ref comp))
                     return true;
             }
             return false;

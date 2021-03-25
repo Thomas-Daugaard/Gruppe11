@@ -8,6 +8,7 @@ namespace Bilka
         public Product()
         {
             Type = IProductComponent.ComponentType.product;
+            Stock = 1;
         }
         public Product(string name)
         {
