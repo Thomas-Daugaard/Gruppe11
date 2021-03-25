@@ -32,17 +32,20 @@ namespace Bilka
                 _productComponents.Add(component);
         }
 
-        public IProductComponent FindComponent(string condition)
+        public IProductComponent FindComponent(string name)
         {
             foreach (IProductComponent component in _productComponents)
             {
-                if (component.Name == condition)
+                if (component.Name == name)
                     return component;
                 else
                 {
-                    return component.FindComponent(condition);
+                    return component.FindComponent(name);
                 }
             }
+
+            Console.WriteLine("Component doesn't exists\n");
+            return null;
         }
 
 
