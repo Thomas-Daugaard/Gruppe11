@@ -15,27 +15,21 @@ namespace Bilka
 
         public void AddComponent(IProductComponent component)
         {
-            //_productComponents.Contains(productLeaf);
-            //for(int i = 0; i<_productComponents.Count;++i)
-            //{
-            //    if(_productComponents[i].Name == productLeaf.Name)
-            //    {
-            //        _productComponents[i].Stock += 1;
-            //    }
-            //    else
-            //    {
-            //        _productComponents.Add(productLeaf);
-            //    }
-            //    return;
-            //}
-            IProductComponent temp = FindComponent(productLeaf.Name);
-            if(temp.Type == IProductComponent.ComponentType.productCategory)
+            
+            IProductComponent temp = FindComponent(component.Name);
+            if (temp != null)
             {
-                foreach(Pr)
+                if (temp.Type == IProductComponent.ComponentType.product)
+                {
+                    temp.Stock += component.Stock;
+                }
+                else if(temp.Type == IProductComponent.ComponentType.productCategory)
+                {
+                    Console.WriteLine("Category already exists, can not add again");
+                }
             }
-
-            //Set enum type
-            _productComponents.Add(component);
+            else
+                _productComponents.Add(component);
         }
 
         public IProductComponent FindComponent(string condition)
