@@ -28,6 +28,11 @@ namespace Bilka
             //    }
             //    return;
             //}
+            IProductComponent temp = FindComponent(productLeaf.Name);
+            if(temp.Type == IProductComponent.ComponentType.productCategory)
+            {
+                foreach(Pr)
+            }
 
             //Set enum type
             _productComponents.Add(productLeaf);
