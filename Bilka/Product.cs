@@ -7,7 +7,6 @@ namespace Bilka
     {
         public Product()
         {
-            _subproductcategories = new List<IProductComponent>();
         }
         public void Print()
         {
