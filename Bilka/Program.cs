@@ -14,17 +14,17 @@ namespace Bilka
             ProductCategory tv = new ProductCategory() {Description = "All TV",Name = "TV"};
             ProductCategory shirts = new ProductCategory() {Description = "All kinds of Shirts", Name = "Shirts"};
 
-            fullInventory.Add(clothing);
-            fullInventory.Add(electronics);
-            electronics.Add(kitchen);
-            electronics.Add(tv);
-            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
-            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
-            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
-            clothing.Add(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", Amount = 495.50});
-            clothing.Add(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", Amount = 495.50});
-            clothing.Add(new ProductCategory() {Description = "Shirts", Name = "T-Shirts", Amount = 199});
-            kitchen.Add(new Product() { Description = "Kitchen Appliance", Name = "HomeCooker2000", Amount = 1200});
+            fullInventory.AddProduct(clothing);
+            fullInventory.AddProduct(electronics);
+            electronics.AddProduct(kitchen);
+            electronics.AddProduct(tv);
+            tv.AddProduct(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
+            tv.AddProduct(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
+            tv.AddProduct(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
+            clothing.AddProduct(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", Amount = 495.50});
+            clothing.AddProduct(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", Amount = 495.50});
+            clothing.AddProduct(new ProductCategory() {Description = "Shirts", Name = "T-Shirts", Amount = 199});
+            kitchen.AddProduct(new Product() { Description = "Kitchen Appliance", Name = "HomeCooker2000", Amount = 1200});
 
 
             string key;

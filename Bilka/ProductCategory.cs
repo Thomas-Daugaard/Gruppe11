@@ -12,7 +12,7 @@ namespace Bilka
             _productComponents = new List<IProductComponent>();
         }
 
-        public void Add(IProductComponent productComponent)
+        public void AddProduct(IProductComponent productComponent)
         {
             _productComponents.Add(productComponent);
         }
