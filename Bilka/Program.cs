@@ -52,10 +52,10 @@ namespace Bilka
                         Console.WriteLine(fullInventory.GetTotalStock());
                         break;
                     case "F":
-                        IProductComponent temp = null;
-                        fullInventory.FindComponent("HomeCooker2000", ref temp);
-                        if(temp != null)
-                            Console.WriteLine(temp.Name);
+                        IProductComponent ComptoFind = null;
+                        fullInventory.FindComponent("HomeCooker2000", ref ComptoFind);
+                        if(ComptoFind != null)
+                            Console.WriteLine(ComptoFind.Name);
                         else
                             Console.WriteLine("Product not found");
                         break;
