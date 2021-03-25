@@ -13,7 +13,7 @@ namespace Bilka
             Type = IProductComponent.ComponentType.productCategory;
         }
 
-        public void AddProduct(IProductComponent productLeaf)
+        public void AddComponent(IProductComponent component)
         {
             //_productComponents.Contains(productLeaf);
             //for(int i = 0; i<_productComponents.Count;++i)
@@ -28,16 +28,20 @@ namespace Bilka
             //    }
             //    return;
             //}
+            IProductComponent temp = FindComponent(productLeaf.Name);
+            if(temp.Type == IProductComponent.ComponentType.productCategory)
+            {
+                foreach(Pr)
+            }
 
-            //Set enum type
-            _productComponents.Add(productLeaf);
+            _productComponents.Add(component);
         }
 
-        public IProductComponent FindComponent(string condition)
+        public IProductComponent FindComponent(string name)
         {
             foreach (IProductComponent component in _productComponents)
             {
-                if (component.Name == condition)
+                if (component.Name == name)
                     return component;
                 else
                 {
@@ -47,12 +51,14 @@ namespace Bilka
 
             return null;
         }
+                    return component.FindComponent(name);
+                }
+            }
 
-        public void AddCategory(IProductComponent categoryComponent)
-        {
-            //Set enum type
-            _productComponents.Add(categoryComponent);
+            Console.WriteLine("Component doesn't exists\n");
+            return null;
         }
+
 
         public void Remove(IProductComponent productComponent)
         {
