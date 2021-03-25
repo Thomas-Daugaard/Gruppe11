@@ -15,9 +15,10 @@ namespace Bilka
 
         public void AddComponent(IProductComponent component)
         {
-            
-            IProductComponent temp = FindComponent(component.Name);
-            if (temp != null)
+
+            IProductComponent temp = null;
+            bool found = FindComponent(component.Name, ref temp);
+            if (found != false)
             {
                 if (temp.Type == IProductComponent.ComponentType.product)
                 {
