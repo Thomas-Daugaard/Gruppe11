@@ -7,6 +7,7 @@
         public void Print();
         public double Amount { get; set; }
         public double GetTotalAmount();
+        public int Stock { get; set; }
 
     }
 }

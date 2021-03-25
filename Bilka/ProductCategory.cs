@@ -14,6 +14,19 @@ namespace Bilka
 
         public void AddProduct(IProductComponent productComponent)
         {
+            //_productComponents.Contains(productComponent);
+            //for(int i = 0; i<_productComponents.Count;++i)
+            //{
+            //    if(_productComponents[i].Name == productComponent.Name)
+            //    {
+            //        _productComponents[i].Stock += 1;
+            //    }
+            //    else
+            //    {
+            //        _productComponents.Add(productComponent);
+            //    }
+            //    return;
+            //}
             _productComponents.Add(productComponent);
         }
 
@@ -41,6 +54,8 @@ namespace Bilka
 
             return Amount;
         }
+
+        public int Stock { get; set; }
 
         public string Name { get; set; }
         public string Description { get; set; }
