@@ -35,7 +35,6 @@ namespace Bilka2._0
         }
 
         public int NumberOfComponents { get; set; }
-
         public int NumberOfProducts { get; set; }
         public string Description { get; set; }
     }

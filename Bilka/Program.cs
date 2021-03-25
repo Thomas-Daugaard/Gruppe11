@@ -18,13 +18,13 @@ namespace Bilka
             fullInventory.Add(electronics);
             electronics.Add(kitchen);
             electronics.Add(tv);
-            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417"});
-            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417"});
-            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417"});
-            clothing.Add(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9"});
-            clothing.Add(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9"});
-            clothing.Add(new ProductCategory() {Description = "Shirts", Name = "T-Shirts"});
-            kitchen.Add(new Product() { Description = "Kitchen Appliance", Name = "HomeCooker2000" });
+            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
+            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
+            tv.Add(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", Amount = 1999});
+            clothing.Add(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", Amount = 495.50});
+            clothing.Add(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", Amount = 495.50});
+            clothing.Add(new ProductCategory() {Description = "Shirts", Name = "T-Shirts", Amount = 199});
+            kitchen.Add(new Product() { Description = "Kitchen Appliance", Name = "HomeCooker2000", Amount = 1200});
 
 
             string key;
@@ -46,6 +46,9 @@ namespace Bilka
                         break;
                     case "C":
                         clothing.Print();
+                        break;
+                    case "T":
+                        Console.WriteLine(fullInventory.GetTotalAmount());
                         break;
                 }
 
