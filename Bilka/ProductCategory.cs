@@ -12,22 +12,30 @@ namespace Bilka
             _productComponents = new List<IProductComponent>();
         }
 
-        public void AddProduct(IProductComponent productComponent)
+        public void AddProduct(IProductComponent productLeaf)
         {
-            //_productComponents.Contains(productComponent);
+            //_productComponents.Contains(productLeaf);
             //for(int i = 0; i<_productComponents.Count;++i)
             //{
-            //    if(_productComponents[i].Name == productComponent.Name)
+            //    if(_productComponents[i].Name == productLeaf.Name)
             //    {
             //        _productComponents[i].Stock += 1;
             //    }
             //    else
             //    {
-            //        _productComponents.Add(productComponent);
+            //        _productComponents.Add(productLeaf);
             //    }
             //    return;
             //}
-            _productComponents.Add(productComponent);
+
+            //Set enum type
+            _productComponents.Add(productLeaf);
+        }
+
+        public void AddCategory(IProductComponent categoryComponent)
+        {
+            //Set enum type
+            _productComponents.Add(categoryComponent);
         }
 
         public void Remove(IProductComponent productComponent)
