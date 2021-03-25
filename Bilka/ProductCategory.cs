@@ -36,17 +36,18 @@ namespace Bilka
 
         public bool FindComponent(string name, ref IProductComponent comp)
         {
+            if (Name == name)
+            {
+                comp = this;
+                return true;
+            }
+
             foreach (var component in _productComponents)
             {
-                if (component.Type == IProductComponent.ComponentType.productCategory && component.Name == name)
-                {
-                    comp = this;
-                    return true;
-                }
-
-                else if(component.FindComponent(name, ref comp))
+                if (component.FindComponent(name, ref comp))
                     return true;
             }
+
             return false;
         }
 

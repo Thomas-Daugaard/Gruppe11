@@ -8,6 +8,7 @@ namespace Bilka
         static void Main(string[] args)
         {
             IProductComponent temp = null;
+            ConsoleKeyInfo consoleKeyInfo;
 
             // Create Product categories
             ProductCategory FullInventory = new ProductCategory() {Description = "Full inventory of Bilka", Name = "Full Inventory"};
@@ -49,7 +50,7 @@ namespace Bilka
 
             Fruit.AddComponent(FullInventory, new Product() {Description = "Pineapple", Name = "Pineapple", price = 14, Stock = 75});
             Fruit.AddComponent(FullInventory, new Product() { Description = "Bananas", Name = "Bananas", price = 2, Stock = 500 });
-            Fruit.AddComponent(FullInventory, new Product() { Description = "Bananas", Name = "Apples", price = 2, Stock = 198 });
+            Fruit.AddComponent(FullInventory, new Product() { Description = "Apple", Name = "Apples", price = 2, Stock = 198 });
 
             // Clothing data
             Clothing.AddComponent(FullInventory, new Product() { Description = "T-shirt", Name = "Lupilu baby T-shirt", price = 300, Stock = 7 });
@@ -62,41 +63,47 @@ namespace Bilka
             Clothing.AddComponent(FullInventory, new Product() { Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50 });
 
             string key;
-            do
+            while (true)
             {
                 Console.WriteLine("Bilka");
-                Console.WriteLine("Enter A for full inventory, B for Electronics, C for clothing, E for quit");
-                key = Console.ReadLine();
+                Console.WriteLine("(F)ull inventory, (E)lectronics, (C)lothing, C(O)lonial, Total (V)alue, Total (S)tock, (Q)uit");
+                consoleKeyInfo = Console.ReadKey(true);
 
-                switch (key)
+                switch (consoleKeyInfo.Key)
                 {
-                    case "A":
+                    case ConsoleKey.F:
+                        Console.Clear();
                         FullInventory.Print();
                         break;
-                    case "B":
+                    case ConsoleKey.E:
+                        Console.Clear();
                         FullInventory.FindComponent("Electronics", ref temp);
                         temp.Print();
                         break;
-                    case "C":
-                        Clothing.Print();
+                    case ConsoleKey.C:
+                        Console.Clear();
+                        FullInventory.FindComponent("Clothing", ref temp);
+                        temp.Print();
                         break;
-                    case "T":
-                        Console.WriteLine($"{FullInventory.GetTotalValue()} kr.");
+                    case ConsoleKey.O:
+                        Console.Clear();
+                        FullInventory.FindComponent("Colonial", ref temp);
+                        temp.Print();
                         break;
-                    case "S":
-                        Console.WriteLine(FullInventory.GetTotalStock());
+                    case ConsoleKey.V:
+                        Console.Clear();
+                        Console.WriteLine($"Total inventory value: {FullInventory.GetTotalValue()} kr.");
                         break;
-                    case "F":
-                        IProductComponent ComptoFind = null;
-                        FullInventory.FindComponent("LG318417", ref ComptoFind);
-                        if(ComptoFind != null)
-                            Console.WriteLine(ComptoFind.Stock);
-                        else
-                            Console.WriteLine("Product not found");
+                    case ConsoleKey.S:
+                        Console.Clear();
+                        Console.WriteLine($"(Total inventory stock: {FullInventory.GetTotalStock()} PCS");
+                        break;
+                    case ConsoleKey.Q:
+                        Environment.Exit(1);
                         break;
                 }
 
-            } while (key != "E");
+            }
         }
     }
 }
