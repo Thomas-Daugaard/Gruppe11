@@ -9,6 +9,11 @@ namespace Bilka
         {
             Type = IProductComponent.ComponentType.product;
         }
+        public Product(string name)
+        {
+            Name = name;
+            Type = IProductComponent.ComponentType.product;
+        }
         public void Print()
         {
             Console.WriteLine(Name + "with description: " + Description);
