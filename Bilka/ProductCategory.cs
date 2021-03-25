@@ -32,19 +32,29 @@ namespace Bilka
             }
         }
 
-        public double GetTotalAmount()
+        public double GetTotalValue()
+        {
+            Value = 0;
+
+            foreach (var productComponent in _productComponents)
+            {
+                Value += productComponent.GetTotalValue();
+            }
+
+            return Value;
+        }
+
+        public int GetTotalStock()
         {
             foreach (var productComponent in _productComponents)
             {
-                Amount += productComponent.GetTotalAmount();
+                productComponent.GetTotalStock();
             }
-
-            return Amount;
+            return Stoc
         }
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public double Amount { get; set; }
-
+        public double Value { get; set; }
     }
 }

@@ -7,18 +7,18 @@ namespace Bilka
     {
         public Product()
         {
-            _subproductcategories = new List<IProductComponent>();
         }
         public void Print()
         {
             Console.WriteLine(Name + "with description: " + Description);
         }
+        public double GetTotalValue()
+        {
+            return price;
+        }
+
         public string Name { get; set; }
         public string Description { get; set; }
-        public double Amount { get; set; }
-        public double GetTotalAmount()
-        {
-            return Amount;
-        }
+        public double price { get; set; }
     }
 }
