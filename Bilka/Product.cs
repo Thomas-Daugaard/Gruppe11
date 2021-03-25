@@ -18,7 +18,7 @@ namespace Bilka
 
         public void Print()
         {
-            Console.WriteLine(Name + "with description: " + Description);
+            Console.WriteLine($"Name: {Name,-27} Description: {Description,-34} Price: {price + " kr.",-13} Stock: {Stock + " stk",-5}");
         }
         public double GetTotalValue()
         {

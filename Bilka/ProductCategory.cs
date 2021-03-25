@@ -58,7 +58,8 @@ namespace Bilka
 
         public void Print()
         {
-            Console.WriteLine(Name + " with description: " + Description);
+            Console.WriteLine();
+            Console.WriteLine($"********** Category {Name} - consisting of {Description} **********");
 
             foreach (var component in _productComponents)
             {
