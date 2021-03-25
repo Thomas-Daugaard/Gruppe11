@@ -20,12 +20,12 @@ namespace Bilka
         public string Name { get; set; }
         public string Description { get; set; }
         public double price { get; set; }
-        public double Amount { get; set; }
         public int Stock { get; set; }
 
-        public double GetTotalAmount()
+        public enum Type
         {
-            return Amount;
+            ProductCategory,
+            Product
         }
     }
 }

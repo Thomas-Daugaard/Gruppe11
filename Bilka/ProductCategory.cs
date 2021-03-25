@@ -63,13 +63,20 @@ namespace Bilka
             {
                 productComponent.GetTotalStock();
             }
-            return Stoc
+
+            return Stock;
         }
 
-        public int Stock { get; set; }
 
+        public int Stock { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Value { get; set; }
+
+        public enum Type
+        {
+            ProductCategory,
+            Product
+        }
     }
 }
