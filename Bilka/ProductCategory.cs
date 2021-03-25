@@ -26,9 +26,10 @@ namespace Bilka
                 }
                 else if(temp.Type == IProductComponent.ComponentType.productCategory)
                 {
-                    Console.WriteLine("Category already exists, can not add again");
+                    Console.WriteLine("Category already exists, cannot add again");
                 }
             }
+
             else
                 _productComponents.Add(component);
         }
@@ -37,13 +38,13 @@ namespace Bilka
         {
             foreach (var component in _productComponents)
             {
-                if (Name == name)
+                if (component.Type == IProductComponent.ComponentType.productCategory && component.Name == name)
                 {
                     comp = this;
                     return true;
                 }
 
-                if(component.FindComponent(name, ref comp))
+                else if(component.FindComponent(name, ref comp))
                     return true;
             }
             return false;
@@ -79,9 +80,10 @@ namespace Bilka
 
         public int GetTotalStock()
         {
+            Stock = 0;
             foreach (var productComponent in _productComponents)
             {
-                productComponent.GetTotalStock();
+                Stock += productComponent.GetTotalStock();
             }
 
             return Stock;

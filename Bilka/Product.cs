@@ -22,7 +22,7 @@ namespace Bilka
         }
         public double GetTotalValue()
         {
-            return price;
+            return Stock*price;
         }
 
         public int GetTotalStock()

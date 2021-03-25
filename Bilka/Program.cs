@@ -7,19 +7,28 @@ namespace Bilka
     {
         static void Main(string[] args)
         {
-            ProductCategory fullInventory = new ProductCategory() {Description = "Full inventory of Bilka", Name = "Full Inventory"};
-            ProductCategory electronics = new ProductCategory() {Description = "All Electronics", Name = "Electronics"};
-            ProductCategory electronics2 = new ProductCategory() { Description = "All Electronics", Name = "Electronics"};
-            ProductCategory clothing = new ProductCategory() {Description = "All Clothing",Name = "Clothing"};
-            ProductCategory kitchen = new ProductCategory() {Description = "All Electronics for the kitchen", Name = "Kitchen Electronics"};
+            ProductCategory FullInventory = new ProductCategory() {Description = "Full inventory of Bilka", Name = "Full Inventory"};
+                ProductCategory Clothing = new ProductCategory() { Description = "All Clothing", Name = "Clothing" };
+                ProductCategory Colonial = new ProductCategory() { Description = "All Clothing", Name = "Clothing" };
+                        ProductCategory  = new ProductCategory() { Description = "All Clothing", Name = "Clothing" };
+                        ProductCategory clothing = new ProductCategory() { Description = "All Clothing", Name = "Clothing" };
+                ProductCategory Electronics = new ProductCategory() {Description = "All Electronics", Name = "Electronics"};
+                    ProductCategory Laptops = new ProductCategory() { Description = "Laptop computers", Name = "Laptops" };
+                        ProductCategory Gaming = new ProductCategory() {Description = "Gaming ready high-end laptops", Name = "Gaming"};
+                        ProductCategory Coding = new ProductCategory() {Description = "Advanced users computers meant for coding", Name = "Coding"};
+                    ProductCategory Mobiles = new ProductCategory() { Description = "Mobile Telephones", Name = "Mobiles" };
+            
+
+
+            
             ProductCategory tv = new ProductCategory() {Description = "All TV",Name = "TV"};
+
+
             ProductCategory shirts = new ProductCategory() {Description = "All kinds of Shirts", Name = "Shirts"};
 
             fullInventory.AddComponent(fullInventory, clothing);
-            fullInventory.AddComponent(fullInventory, electronics);
-            fullInventory.AddComponent(fullInventory, electronics2);
-            electronics.AddComponent(fullInventory, kitchen);
-            electronics.AddComponent(fullInventory, tv);
+            fullInventory.AddComponent(fullInventory, Electronics);
+            Electronics.AddComponent(fullInventory, tv);
             tv.AddComponent(fullInventory, new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
             tv.AddComponent(fullInventory, new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
             tv.AddComponent(fullInventory, new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
