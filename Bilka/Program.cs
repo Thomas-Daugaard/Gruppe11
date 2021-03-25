@@ -92,7 +92,7 @@ namespace Bilka
                         break;
                     case ConsoleKey.V:
                         Console.Clear();
-                        Console.WriteLine($"Total inventory value: {FullInventory.GetTotalValue()} kr.");
+                        Console.WriteLine($"Total inventory value: {FullInventory.GetTotalValue():###,###.00} kr.");
                         break;
                     case ConsoleKey.S:
                         Console.Clear();
