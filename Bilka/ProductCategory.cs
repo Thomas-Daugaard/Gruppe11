@@ -34,7 +34,6 @@ namespace Bilka
                 foreach(Pr)
             }
 
-            //Set enum type
             _productComponents.Add(component);
         }
 
