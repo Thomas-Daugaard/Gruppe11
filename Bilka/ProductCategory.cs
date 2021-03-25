@@ -10,6 +10,7 @@ namespace Bilka
         public ProductCategory()
         {
             _productComponents = new List<IProductComponent>();
+            Type = IProductComponent.ComponentType.ProductCategory;
         }
 
         public void AddProduct(IProductComponent productLeaf)
@@ -77,14 +78,10 @@ namespace Bilka
 
 
         public int Stock { get; set; }
+        public IProductComponent.ComponentType Type { get; set; }
+        public System.Type TypeOf { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Value { get; set; }
-
-        public enum Type
-        {
-            ProductCategory,
-            Product
-        }
     }
 }

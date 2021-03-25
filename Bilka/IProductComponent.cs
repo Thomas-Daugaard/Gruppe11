@@ -11,5 +11,11 @@ namespace Bilka
         public int GetTotalStock();
         public int Stock { get; set; }
 
+        public enum ComponentType
+        {
+            ProductCategory,
+            Product
+        }
+        public ComponentType Type { get; set; }
     }
 }
