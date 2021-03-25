@@ -13,7 +13,7 @@ namespace Bilka
             Type = IProductComponent.ComponentType.productCategory;
         }
 
-        public void AddProduct(IProductComponent productLeaf)
+        public void AddComponent(IProductComponent component)
         {
             //_productComponents.Contains(productLeaf);
             //for(int i = 0; i<_productComponents.Count;++i)
@@ -30,7 +30,7 @@ namespace Bilka
             //}
 
             //Set enum type
-            _productComponents.Add(productLeaf);
+            _productComponents.Add(component);
         }
 
         public IProductComponent FindComponent(string condition)
@@ -46,11 +46,6 @@ namespace Bilka
             }
         }
 
-        public void AddCategory(IProductComponent categoryComponent)
-        {
-            categoryComponent.Type = IProductComponent.ComponentType.productCategory;
-            _productComponents.Add(categoryComponent);
-        }
 
         public void Remove(IProductComponent productComponent)
         {
