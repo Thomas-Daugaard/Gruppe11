@@ -11,32 +11,36 @@ namespace Bilka2._0
     {
         public void AddProduct(IProductComponent p)
         {
-            throw new NotImplementedException();
+            _children.Add(p);
+            ++NumberOfComponents;
         }
 
         public void RemoveProduct(IProductComponent p)
         {
-            throw new NotImplementedException();
+            int temp = _children.IndexOf(p);
+            _children.RemoveAt(temp);
+            --NumberOfComponents;
         }
+        private List<IProductComponent> _children;
+        //public IProductComponent GetProduct()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public IProductComponent GetProduct()
-        {
-            throw new NotImplementedException();
-        }
+        //public void PrintProduct()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public void PrintProduct()
-        {
-            throw new NotImplementedException();
-        }
-
-        public double GetTotalValue()
-        {
-            throw new NotImplementedException();
-        }
+        //public double GetTotalValue()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public int NumberOfComponents { get; set; }
 
         public int NumberOfProducts { get; set; }
         public string Description { get; set; }
+
     }
 }
