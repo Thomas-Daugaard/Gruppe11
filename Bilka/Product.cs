@@ -5,6 +5,10 @@ namespace Bilka
 {
     public class Product : IProductComponent
     {
+        public Product()
+        {
+            _subproductcategories = new List<IProductComponent>();
+        }
         public void Print()
         {
             Console.WriteLine(Name + "with description: " + Description);
