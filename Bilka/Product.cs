@@ -12,8 +12,14 @@ namespace Bilka
         {
             Console.WriteLine(Name + "with description: " + Description);
         }
+        public double GetTotalValue()
+        {
+            return price;
+        }
+
         public string Name { get; set; }
         public string Description { get; set; }
+        public double price { get; set; }
         public double Amount { get; set; }
         public int Stock { get; set; }
 
