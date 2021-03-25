@@ -7,7 +7,7 @@ namespace Bilka
     {
         public Product()
         {
-            _subproductCategories = new List<IProductComponent>();
+            _subproductcategories = new List<IProductComponent>();
         }
         public void Print()
         {
@@ -16,8 +16,16 @@ namespace Bilka
         public string Name { get; set; }
         public string Description { get; set; }
 
-        private List<IProductComponent> _subproductCategories;
+        public void AddSubCategory(IProductComponent cat)
+        {
+            _subproductcategories.Add(cat);
+        }
 
+        public List<IProductComponent> SubProductategories
+        {
+            get { return _subproductcategories; }
+        }
 
+        private List<IProductComponent> _subproductcategories;
     }
 }
