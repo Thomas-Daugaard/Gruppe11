@@ -7,7 +7,7 @@ namespace Bilka
     {
         public Product()
         {
-            Type = IProductComponent.ComponentType.Product;
+            Type = IProductComponent.ComponentType.product;
         }
         public void Print()
         {
@@ -21,6 +21,10 @@ namespace Bilka
         public int GetTotalStock()
         {
             return Stock;
+        }
+        public IProductComponent FindComponent(string condition)
+        {
+            return this;
         }
 
         public string Name { get; set; }

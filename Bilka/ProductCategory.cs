@@ -10,7 +10,7 @@ namespace Bilka
         public ProductCategory()
         {
             _productComponents = new List<IProductComponent>();
-            Type = IProductComponent.ComponentType.ProductCategory;
+            Type = IProductComponent.ComponentType.productCategory;
         }
 
         public void AddProduct(IProductComponent productLeaf)
@@ -31,6 +31,19 @@ namespace Bilka
 
             //Set enum type
             _productComponents.Add(productLeaf);
+        }
+
+        public IProductComponent FindComponent(string condition)
+        {
+            foreach (IProductComponent component in _productComponents)
+            {
+                if (component.Name == condition)
+                    return component;
+                else
+                {
+                    return component.FindComponent(condition);
+                }
+            }
         }
 
         public void AddCategory(IProductComponent categoryComponent)
