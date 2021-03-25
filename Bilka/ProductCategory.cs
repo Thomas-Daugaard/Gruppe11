@@ -28,35 +28,23 @@ namespace Bilka
             //    }
             //    return;
             //}
-            IProductComponent temp = FindComponent(productLeaf.Name);
-            if(temp.Type == IProductComponent.ComponentType.productCategory)
-            {
-                foreach(Pr)
-            }
+            //IProductComponent temp = FindComponent(productLeaf.Name);
+            //if(temp.Type == IProductComponent.ComponentType.productCategory)
+            //{
+            //    foreach(Pr)
+            //}
 
             _productComponents.Add(component);
         }
 
-        public IProductComponent FindComponent(string name)
+        public bool FindComponent(string name, ref IProductComponent comp)
         {
-            foreach (IProductComponent component in _productComponents)
+            foreach (var component in _productComponents)
             {
-                if (component.Name == name)
-                    return component;
-                else
-                {
-                    return component.FindComponent(condition);
-                }
+                if (component.FindComponent(name, ref comp))
+                    return true;
             }
-
-            return null;
-        }
-                    return component.FindComponent(name);
-                }
-            }
-
-            Console.WriteLine("Component doesn't exists\n");
-            return null;
+            return false;
         }
 
 

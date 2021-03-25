@@ -14,17 +14,17 @@ namespace Bilka
             ProductCategory tv = new ProductCategory() {Description = "All TV",Name = "TV"};
             ProductCategory shirts = new ProductCategory() {Description = "All kinds of Shirts", Name = "Shirts"};
 
-            fullInventory.AddProduct(clothing);
-            fullInventory.AddProduct(electronics);
-            electronics.AddProduct(kitchen);
-            electronics.AddProduct(tv);
-            tv.AddProduct(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
-            tv.AddProduct(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
-            tv.AddProduct(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
-            clothing.AddProduct(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50});
-            clothing.AddProduct(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50});
-            clothing.AddProduct(new ProductCategory() {Description = "Shirts", Name = "T-Shirts"});
-            kitchen.AddProduct(new Product() { Description = "Kitchen Appliance", Name = "HomeCooker2000", price = 1200});
+            fullInventory.AddComponent(clothing);
+            fullInventory.AddComponent(electronics);
+            electronics.AddComponent(kitchen);
+            electronics.AddComponent(tv);
+            tv.AddComponent(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
+            tv.AddComponent(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
+            tv.AddComponent(new Product() {Description = "LG Super Slim beautiful 32'' TV", Name = "LG318417", price = 1999});
+            clothing.AddComponent(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50});
+            clothing.AddComponent(new Product() {Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50});
+            clothing.AddComponent(new ProductCategory() {Description = "Shirts", Name = "T-Shirts"});
+            kitchen.AddComponent(new Product( ) { Description = "Kitchen Appliance", Name = "HomeCooker2000", price = 1200});
 
 
             string key;
@@ -52,8 +52,12 @@ namespace Bilka
                         Console.WriteLine(fullInventory.GetTotalStock());
                         break;
                     case "F":
-                        IProductComponent temp = fullInventory.FindComponent("HomeCooker2000");
-                        Console.WriteLine(temp.Name);
+                        IProductComponent temp = null;
+                        fullInventory.FindComponent("HomeCooker2000", ref temp);
+                        if(temp != null)
+                            Console.WriteLine(temp.Name);
+                        else
+                            Console.WriteLine("Product not found");
                         break;
                 }
 

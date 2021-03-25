@@ -14,6 +14,7 @@ namespace Bilka
             Name = name;
             Type = IProductComponent.ComponentType.product;
         }
+
         public void Print()
         {
             Console.WriteLine(Name + "with description: " + Description);
@@ -27,9 +28,15 @@ namespace Bilka
         {
             return Stock;
         }
-        public IProductComponent FindComponent(string condition)
+        public bool FindComponent(string name, ref IProductComponent component)
         {
-            return this;
+            if (name == Name)
+            {
+                component = this;
+                return true;
+            }
+
+            else return false;
         }
 
         public string Name { get; set; }

@@ -7,7 +7,7 @@ namespace Bilka
         public string Name { get; set; }
         public string Description { get; set; }
         public void Print();
-        public IProductComponent FindComponent(string condition);
+        public bool FindComponent(string name, ref IProductComponent component);
         public double GetTotalValue();
         public int GetTotalStock();
         public int Stock { get; set; }
