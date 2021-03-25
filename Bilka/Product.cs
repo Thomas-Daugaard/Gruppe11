@@ -7,6 +7,7 @@ namespace Bilka
     {
         public Product()
         {
+            Type = IProductComponent.ComponentType.Product;
         }
         public void Print()
         {
@@ -17,15 +18,15 @@ namespace Bilka
             return price;
         }
 
+        public int GetTotalStock()
+        {
+            return Stock;
+        }
+
         public string Name { get; set; }
         public string Description { get; set; }
         public double price { get; set; }
         public int Stock { get; set; }
-
-        public enum Type
-        {
-            ProductCategory,
-            Product
-        }
+        public IProductComponent.ComponentType Type { get; set; }
     }
 }
