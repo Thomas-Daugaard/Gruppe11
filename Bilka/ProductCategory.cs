@@ -48,7 +48,6 @@ namespace Bilka
 
         public void AddCategory(IProductComponent categoryComponent)
         {
-            //Set enum type
             categoryComponent.Type = IProductComponent.ComponentType.productCategory;
             _productComponents.Add(categoryComponent);
         }
