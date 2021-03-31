@@ -1,15 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Bilka
 {
     public class ProductCategory : IProductComponent
     {
-        private List<IProductComponent> _productComponents;
+        public List<IProductComponent> ProductComponents;
+
+        public ProductCategory(ProductCategory previousCategory)
+        {
+            Name = previousCategory.Name;
+            Description = previousCategory.Description;
+            Value = previousCategory.Value;
+            Stock = Stock;
+            ProductComponents = previousCategory.ProductComponents;
+            Type = previousCategory.Type;
+        }
 
         public ProductCategory()
         {
-            _productComponents = new List<IProductComponent>();
+            ProductComponents = new List<IProductComponent>();
             Type = IProductComponent.ComponentType.productCategory;
         }
 
@@ -26,12 +37,12 @@ namespace Bilka
                 }
                 else if(temp.Type == IProductComponent.ComponentType.productCategory)
                 {
-                    Console.WriteLine("Category already exists, cannot add again");
+                    Debug.WriteLine("Category already exists, cannot add again");
                 }
             }
 
             else
-                _productComponents.Add(component);
+                ProductComponents.Add(component);
         }
 
         public bool FindComponent(string name, ref IProductComponent comp)
@@ -42,7 +53,7 @@ namespace Bilka
                 return true;
             }
 
-            foreach (var component in _productComponents)
+            foreach (var component in ProductComponents)
             {
                 if (component.FindComponent(name, ref comp))
                     return true;
@@ -54,7 +65,7 @@ namespace Bilka
 
         public void Remove(IProductComponent productComponent)
         {
-            _productComponents.Remove(productComponent);
+            ProductComponents.Remove(productComponent);
         }
 
         public void Print()
@@ -62,7 +73,7 @@ namespace Bilka
             Console.WriteLine();
             Console.WriteLine($"********** Category {Name} - consisting of {Description} **********");
 
-            foreach (var component in _productComponents)
+            foreach (var component in ProductComponents)
             {
                 component.Print();
             }
@@ -72,7 +83,7 @@ namespace Bilka
         {
             Value = 0;
 
-            foreach (var productComponent in _productComponents)
+            foreach (var productComponent in ProductComponents)
             {
                 Value += productComponent.GetTotalValue();
             }
@@ -83,7 +94,7 @@ namespace Bilka
         public int GetTotalStock()
         {
             Stock = 0;
-            foreach (var productComponent in _productComponents)
+            foreach (var productComponent in ProductComponents)
             {
                 Stock += productComponent.GetTotalStock();
             }
@@ -94,7 +105,6 @@ namespace Bilka
 
         public int Stock { get; set; }
         public IProductComponent.ComponentType Type { get; set; }
-        public System.Type TypeOf { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Value { get; set; }
