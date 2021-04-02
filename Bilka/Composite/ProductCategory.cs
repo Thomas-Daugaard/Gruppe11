@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Bilka
 {
@@ -108,7 +110,29 @@ namespace Bilka
         public string Name { get; set; }
         public string Description { get; set; }
         public double Value { get; set; }
+        public double Price { get; set; } = Double.PositiveInfinity;
 
-        
+        // https://stackoverflow.com/questions/39085721/how-to-implement-the-ienumeratort-interface-for-the-composite-pattern
+        public IEnumerator<IProductComponent> GetEnumerator()
+        {
+            var components = new Stack<IProductComponent>(new[] {this});
+            while (components.Any())
+            {
+                IProductComponent component = components.Pop();
+                yield return component;
+                if (component is ProductCategory category)
+                {
+                    foreach (var n in category.ProductComponents)
+                    {
+                        components.Push(n);
+                    }
+                }
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

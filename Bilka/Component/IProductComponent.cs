@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Bilka
 {
-    public interface IProductComponent
+    public interface IProductComponent : IEnumerable<IProductComponent>
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -11,6 +13,7 @@ namespace Bilka
         public double GetTotalValue();
         public int GetTotalStock();
         public int Stock { get; set; }
+        public double Price { get; set; }
 
         public enum ComponentType
         {
