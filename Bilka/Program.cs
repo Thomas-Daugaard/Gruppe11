@@ -13,11 +13,11 @@ namespace Bilka
             string name;
             string stock;
 
-            IInventoryFactory inventoryFactory = new InventoryFactory(new Inventory());
+            InventoryFactory inventoryFactory = new Inventory();
             IProductComponent temp = null;
             ConsoleKeyInfo consoleKeyInfo;
 
-            IProductComponent FullInventory = inventoryFactory.GetInventory();
+            IProductComponent FullInventory = inventoryFactory.Create();
 
             Printer printerObj = new Printer(FullInventory);
 
