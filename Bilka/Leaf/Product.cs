@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Bilka
@@ -18,11 +19,11 @@ namespace Bilka
 
         public void Print()
         {
-            Console.WriteLine($"Name: {Name,-24} Description: {Description,-35} Price: {price,9:###,###.00} kr. \t {"Stock: " + Stock + " PCS"}");
+            Console.WriteLine($"Name: {Name,-24} Description: {Description,-35} Price: {Price,9:###,###.00} kr. \t {"Stock: " + Stock + " PCS"}");
         }
         public double GetTotalValue()
         {
-            return Stock*price;
+            return Stock*Price;
         }
 
         public int GetTotalStock()
@@ -42,8 +43,18 @@ namespace Bilka
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public double price { get; set; }
+        public double Price { get; set; }
         public int Stock { get; set; }
         public IProductComponent.ComponentType Type { get; set; }
+
+        public IEnumerator<IProductComponent> GetEnumerator()
+        {
+            yield break;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
