@@ -6,21 +6,8 @@ using System.Threading.Tasks;
 
 namespace Bilka
 {
-    class InventoryFactory : IInventoryFactory
+    abstract class InventoryFactory
     {
-        private IInventory inventory;
-
-        public InventoryFactory(IInventory inventory)
-        {
-            this.inventory = inventory;
-        }
-
-        public IProductComponent GetInventory()
-        {
-            inventory.CreateInventory();
-            inventory.InsertDummyData();
-
-            return inventory.ConcreteInventory;
-        }
+        public abstract IProductComponent Create();
     }
 }

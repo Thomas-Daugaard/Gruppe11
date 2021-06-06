@@ -7,11 +7,11 @@ namespace Bilka
     {
         static void Main(string[] args)
         {
-            IInventoryFactory inventoryFactory = new InventoryFactory(new Inventory());
+            InventoryFactory inventoryFactory = new Inventory();
             IProductComponent temp = null;
             ConsoleKeyInfo consoleKeyInfo;
 
-            IProductComponent FullInventory = inventoryFactory.GetInventory();
+            IProductComponent FullInventory = inventoryFactory.Create();
 
             while (true)
             {

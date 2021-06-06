@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bilka
 {
-    class Inventory : IInventory
+    class Inventory : InventoryFactory
     {
+
         private ProductCategory FullInventory;
         private ProductCategory Clothing;
         private ProductCategory Colonial;
@@ -19,7 +20,7 @@ namespace Bilka
         private ProductCategory Coding;
         private ProductCategory Mobiles;
 
-        public void CreateInventory()
+        public override IProductComponent Create()
         {
             FullInventory = new ProductCategory() { Description = "Full inventory of Bilka", Name = "Full Inventory" };
             Clothing = new ProductCategory() { Description = "All Clothing", Name = "Clothing" };
@@ -42,10 +43,12 @@ namespace Bilka
             Electronics.AddComponent(FullInventory, Laptops);
             FullInventory.AddComponent(FullInventory, Electronics);
 
-            ConcreteInventory = FullInventory;
+            InsertDummyData();
+
+            return FullInventory;
         }
 
-        public void InsertDummyData()
+        private void InsertDummyData()
         {
             Gaming.AddComponent(FullInventory, new Product() { Description = "Asus Gaming PC", Name = "Asus TUF Gaming A15", price = 7999, Stock = 4 });
 
@@ -73,7 +76,5 @@ namespace Bilka
             Clothing.AddComponent(FullInventory, new Product() { Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50 });
             Clothing.AddComponent(FullInventory, new Product() { Description = "Cowboy Jeans", Name = "Diesel xx9", price = 495.50 });
         }
-
-        public IProductComponent ConcreteInventory { get; set; }
     }
 }
